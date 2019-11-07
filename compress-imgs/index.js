@@ -1,5 +1,8 @@
 // 压缩图像文件
 function compressImgs(files, maxSize = 300, maxWidth = 600, maxHeight = 600) {
+  if(!(files && Array.isArray(files))) {
+    throw new Error('The function receives an array');
+  }
   const arr = files.map(
     file =>
     new Promise(resolve => {
